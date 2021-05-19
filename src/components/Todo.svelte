@@ -4,34 +4,17 @@
   export let deleteTodo;
 </script>
 
-<div class="todo">
-  <p class={todo.done ? "done" : ""}>{todo.text}</p>
+<div
+  class="flex items-center justify-between w-8/12 px-2 py-8 mx-auto my-4 rounded-md bg-white"
+>
+  <p class={todo.done ? "line-through m-1" : "m-1"}>{todo.text}</p>
   <div>
-    <button on:click={handleDone(todo.id)}>{todo.done ? "解除" : "完了"}</button
+    <button
+      class="m-1 p-3 rounded border border-gray-500"
+      on:click={handleDone(todo.id)}>{todo.done ? "解除" : "完了"}</button
     >
-    <button on:click={deleteTodo(todo.id)} class="delete">削除</button>
+    <button class="m-1 p-3 rounded bg-red-500" on:click={deleteTodo(todo.id)}
+      >削除</button
+    >
   </div>
 </div>
-
-<style>
-  .todo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    padding: 0.4rem 2rem;
-    margin: 1rem auto;
-    border-radius: 15px;
-    background-color: #ffffff;
-  }
-  .todo p,
-  .todo button {
-    margin: 5px 10px;
-  }
-  .done {
-    text-decoration: line-through;
-  }
-  .delete {
-    background-color: red;
-  }
-</style>
