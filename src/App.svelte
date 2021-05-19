@@ -1,12 +1,17 @@
 <script>
   import Todo from "./components/Todo.svelte";
+
   let todos = [];
-  let newId = () => Date.now().toString(36);
   let newTodoText = "";
+
   const addTodo = () => {
-    todos = [...todos, { id: newId(), text: newTodoText, done: false }];
+    todos = [
+      ...todos,
+      { id: Date.now().toString(36), text: newTodoText, done: false },
+    ];
     newTodoText = "";
   };
+
   const handleDone = (id) => {
     const result = todos.map((todo) => {
       if (todo.id === id) {
@@ -16,6 +21,7 @@
     });
     todos = result;
   };
+
   const deleteTodo = (id) => {
     const result = todos.filter((todo) => todo.id !== id);
     todos = result;
