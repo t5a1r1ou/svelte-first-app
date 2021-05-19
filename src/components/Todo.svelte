@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="flex items-center justify-between w-8/12 px-2 py-8 mx-auto my-4 rounded-md bg-white"
+  class="flex items-center justify-between w-8/12 px-2 py-4 mx-auto my-4 rounded-md bg-white"
 >
   <p class={todo.done ? "line-through m-1" : "m-1"}>{todo.text}</p>
   <div>

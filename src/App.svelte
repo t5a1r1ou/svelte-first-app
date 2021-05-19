@@ -28,7 +28,7 @@
   };
 </script>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center w-screen h-screen bg-blue-500">
   <h1 class="text-3xl m-3">SvelteのTODOアプリ</h1>
   <div class="w-9/12 my-0 mx-auto">
     {#each todos as todo (todo.id)}
